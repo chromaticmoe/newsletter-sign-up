@@ -11,6 +11,8 @@ const MAPI_KEY = process.env.API_KEY
 const MLIST_ID = process.env.LIST_ID
 const MAPI_SERVER = process.env.API_SERVER
 
+console.log(MAPI_SERVER);
+
 app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -44,6 +46,8 @@ app.post("/", function(req, res) {
             method: "POST",
             auth: "ryan1:" + MAPI_KEY
         }
+
+        console.log(MAPI_SERVER);
 
         const request = https.request(url, options, function(response) {
             
